@@ -3,9 +3,9 @@
 const char *const Game::SAVE_FILE = "bj.txt";
 
 Game::Game() {
-  numDecks = 1;
-  money = 10000;
-  currentBet = 500;
+  numDecks = 1; //number of decks used that is played in the game
+  money = 10000; //money for the game
+  currentBet = 500; //bet used when hand is played
 
   loadGame();
 
@@ -29,7 +29,7 @@ int Game::allBets() {
 }
 
 void Game::askInsurance() {
-  std::cout << " Insurance?  (Y) Yes  (N) No" << std::endl;
+  std::cout << " Insurance?  (Y) Yes  (N) No" << std::endl; //prompt to get insurance.
   char myChar;
 
   while (true) {
@@ -67,7 +67,7 @@ void Game::dealNewHand() {
   playerHands.clear();
   PlayerHand::totalPlayerHands = 0;
 
-  PlayerHand *playerHand;
+  PlayerHand *playerHand;  //hand used by the player 
   playerHands.emplace_back(this, currentBet);
   playerHand = &playerHands[0];
 
@@ -99,7 +99,7 @@ void Game::dealNewHand() {
   saveGame();
 }
 
-void Game::drawHands() {
+void Game::drawHands() { //draws hand for either player or dealer
   clear();
   std::cout << std::endl << " Dealer: " << std::endl;
   dealerHand.draw();
@@ -120,7 +120,7 @@ void Game::betOptions() {
   while (true) {
     myChar = (char) getchar();
 
-    switch (myChar) {
+    switch (myChar) { //switch statement that will execute methods for each type of game opton
       case 'd':
         dealNewHand();
         break;
@@ -175,7 +175,7 @@ void Game::gameOptions() {
   }
 }
 
-void Game::getNewDeckType() {
+void Game::getNewDeckType() { //gets new deck type could be regular, aces, jacks, aces and jacks, sevens, or eigths
   char myChar;
 
   clear();
@@ -219,7 +219,7 @@ void Game::getNewDeckType() {
   }
 }
 
-void Game::getNewBet() {
+void Game::getNewBet() { //gets new bet, prompts user for a number that is lower than their bank amount
   clear();
   drawHands();
 
@@ -233,7 +233,7 @@ void Game::getNewBet() {
   dealNewHand();
 }
 
-void Game::getNewNumDecks() {
+void Game::getNewNumDecks() { //gets new number of decks used between 1-8
   clear();
   drawHands();
 
@@ -344,7 +344,7 @@ void Game::payHands() {
   }
 
   normalizeCurrentBet();
-  saveGame();
+  saveGame(); //saves game state
 }
 
 void Game::playDealerHand() {
