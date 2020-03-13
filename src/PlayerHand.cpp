@@ -157,10 +157,10 @@ void PlayerHand::draw(unsigned index) {
 
 void PlayerHand::getAction() {
   std::cout << " ";
-  if (canHit()) { std::cout << "(H) Hit  "; }
-  if (canStand()) { std::cout << "(S) Stand  "; }
-  if (canSplit()) { std::cout << "(P) Split  "; }
-  if (canDbl()) { std::cout << "(D) Double  "; }
+  if (canHit()) { std::cout << "(h) Hit  "; }
+  if (canStand()) { std::cout << "(s) Stand  "; }
+  if (canSplit()) { std::cout << "(p) Split  "; }
+  if (canDbl()) { std::cout << "(d) Double  "; }
   std::cout << std::endl;
 
   char myChar;

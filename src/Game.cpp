@@ -29,7 +29,7 @@ int Game::allBets() {
 }
 
 void Game::askInsurance() {
-  std::cout << " Insurance?  (Y) Yes  (N) No" << std::endl; //prompt to get insurance.
+  std::cout << " Insurance?  (y) Yes  (n) No" << std::endl; //prompt to get insurance.
   char myChar;
 
   while (true) {
@@ -113,7 +113,7 @@ void Game::drawHands() { //draws hand for either player or dealer
 }
 
 void Game::betOptions() {
-  std::cout << " (D) Deal Hand  (B) Change Bet  (O) Options  (Q) Quit" << std::endl;
+  std::cout << " (d) Deal Hand  (b) Change Bet  (o) Options  (q) Quit" << std::endl;
 
   char myChar;
 
