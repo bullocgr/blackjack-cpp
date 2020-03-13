@@ -67,7 +67,7 @@ void Game::dealNewHand() {
   playerHands.clear();
   PlayerHand::totalPlayerHands = 0;
 
-  PlayerHand *playerHand;  //hand used by the player 
+  PlayerHand *playerHand;  //hand used by the player
   playerHands.emplace_back(this, currentBet);
   playerHand = &playerHands[0];
 
@@ -226,7 +226,7 @@ void Game::getNewBet() { //gets new bet, prompts user for a number that is lower
   std::cout << "  Current Bet: $" << std::put_money(currentBet / 100) << std::endl << "  Enter New Bet: $";
   long double betTmp;
   std::cin >> std::get_money(betTmp);
-  auto bet = (unsigned) (betTmp * 100);
+  long double bet = (unsigned) (betTmp * 100);
   currentBet = bet;
 
   normalizeCurrentBet();
